@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>لیوکندلس | شمع‌های دست‌ساز و سفارشی</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><div class="wrap nav">
+<button class="ib" onclick="openSide()" aria-label="منو"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg></button><a href="#home" class="logo" style="display:flex;align-items:center;gap:9px;text-decoration:none;margin:0"><svg width="40" height="40" viewBox="0 0 40 40"><circle cx="20" cy="20" r="19" fill="#F6EFE7"/><circle cx="20" cy="20" r="15.5" fill="none" stroke="#56694E" stroke-width="1" opacity=".7"/><rect x="14" y="21" width="12" height="10" rx="2.5" fill="#56694E"/><rect x="19.2" y="17" width="1.6" height="4" fill="#56694E"/><path d="M20 8c3.4 4 3.4 7 0 9.4c-3.4-2.400-3.400-5.400 0-9.400z" fill="#56694E"/></svg><span style="line-height:1.1"><span style="font-size:21px;font-weight:800;color:#F6EFE7;display:block">لیوکندلس</span><span style="font-size:9px;letter-spacing:3px;color:#E6E9DD;display:block;direction:ltr;text-align:right">LIO CANDLES</span></span></a>
+<div><a class="h" href="#home">خانه</a><a class="h" href="#shop">فروشگاه</a><a class="h" href="#custom">سفارش اختصاصی</a><a class="h" href="#about">درباره و تماس</a><button class="cartbtn" onclick="openCart()">سبد خرید (<span id="cc">۰</span>)</button></div>
+<div class="ic"><button class="ib" onclick="openSearch()" aria-label="جستجو"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></button><a class="ib" href="#login" aria-label="ورود"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></a><button class="ib" onclick="openCart()" aria-label="سبد خرید"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1 12H6z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span class="bd" id="cc2">۰</span></button></div></div></header>
+
+<div data-p="home"><div class="herobg"><div class="wrap hero">
+<div><h1>نور، رایحه<br>و آرامش</h1>
+<p>شمع‌های دست‌ساز از موم سویا؛ هر مدل، هر رنگ و هر رایحه‌ای که بخواهی برایت می‌سازیم.</p>
+<a class="btn" href="#custom">طراحی شمع خودت</a><a class="btn o" href="#shop">مشاهده محصولات</a></div>
+<div class="blob" id="heroC"></div>
+</div></div>
+<svg class="wave" viewBox="0 0 1200 56" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0h1200v14c-150 40-300 40-450 14S450 0 300 14 75 50 0 28z" fill="#56694E"/></svg>
+<div class="mq"><span>🌿 موم سویای طبیعی</span><span>✦ هر رنگ و مدلی</span><span>🕯 ساخت دستی</span><span>🎁 بسته‌بندی هدیه</span></div>
+</div><main class="wrap">
+
+<section data-p="login"><div class="lg" id="lbox"><h2 style="text-align:center">ورود به لیوکندلس</h2><div class="pay" style="margin:14px 0"><button class="opt on" id="l1" onclick="lt(1)">ورود</button><button class="opt" id="l2" onclick="lt(2)">ثبت‌نام</button></div><div id="lname" style="display:none"><label for="lnm">نام و نام خانوادگی</label><input id="lnm"></div><label for="lph">شماره موبایل</label><input id="lph" inputmode="tel" placeholder="09..."><label for="lpw">رمز عبور</label><input id="lpw" type="password"><button class="btn" id="lbtn" style="width:100%;margin-top:16px" onclick="doLogin()">ورود</button></div></section>
+<section id="shop" data-p="shop"><div class="sec-t"><h2>محصولات</h2><p>پرفروش‌ترین شمع‌های ما</p></div><div class="grid" id="grid"></div></section><section id="custom" data-p="shop"><div class="sec-t"><h2>سفارش شمع اختصاصی</h2><p>مدل، رنگ و رایحه را خودت انتخاب کن</p></div>
+<div class="builder">
+<div class="prev"><div id="pv"></div><div id="pvt" style="font-size:13px;color:var(--mut)"></div></div>
+<div>
+<label>مدل</label><div class="opts" id="o-shape"></div>
+<label>اندازه</label><div class="opts" id="o-size"></div>
+<label>رنگ</label><div class="opts" id="o-color" style="align-items:center"></div>
+<label>رایحه</label><select id="scent"></select>
+<label>توضیحات (نوشته روی شمع، هدیه و...)</label><textarea id="note" rows="2" placeholder="مثلاً: نام عروس و داماد"></textarea>
+<div class="tot"><span>قیمت:</span><span class="price" id="cp"></span></div>
+<button class="btn" style="width:100%;margin-top:12px" onclick="addCustom()">افزودن به سبد خرید</button>
+</div></div></section>
+
+<section id="story" data-p="about"><div class="story"><div class="arch"><div id="stC"></div></div><div><h2>داستان ما</h2><p style="color:var(--mut);line-height:2.1">لیو کندلس با یک ایده ساده شروع شد: شمعی که مال خودت باشد. هر شمع با دست، از موم سویا و با رنگ و رایحهٔ دلخواه تو ساخته می‌شود؛ چه برای خودت، چه هدیه‌ای برای کسی که دوستش داری.</p></div></div></section>
+<section data-p="home"><div class="sec-t"><h2>چطور سفارش بدم؟</h2><p>چهار قدم تا شمعِ خودت</p></div><div class="steps"><div class="step"><i>۱</i><b>طراحی کن</b>مدل، رنگ و رایحه را انتخاب کن.</div><div class="step"><i>۲</i><b>سفارش بده</b>از طریق درگاه امن پرداخت کن.</div><div class="step"><i>۳</i><b>ما می‌سازیم</b>شمع با دست ساخته و آماده می‌شود.</div><div class="step"><i>۴</i><b>تحویل بگیر</b>بسته‌بندی قشنگ تا در خانه می‌رسد.</div></div></section>
+<section data-p="home"><div class="feat">
+<div><b>🌿 موم سویا</b>سوزش تمیز و طولانی</div><div><b>🎨 هر رنگی</b>رنگ دلخواه شما</div><div><b>🚚 ارسال سریع</b>به سراسر ایران</div><div><b>🔒 پرداخت امن</b>از طریق درگاه بانکی</div>
+</div></section>
+</main>
+<div class="wrap"><section id="contact" data-p="about"><div class="cont"><div><h2>تماس با ما</h2><p style="color:#E6E9DD;font-size:14px">برای سفارش عمده، هدیه سازمانی یا هر سؤالی، پیام بذار.</p><div class="ci"><span>📍</span><div><b>آدرس</b>[آدرس فروشگاه را اینجا وارد کنید]</div></div><div class="ci"><span>📞</span><div><b>تلفن</b><span dir="ltr">۰۹۱۲ ۰۰۰ ۰۰۰۰</span></div></div><div class="ci"><span>📷</span><div><b>اینستاگرام</b><span dir="ltr">@liocandles</span></div></div><div class="ci"><span>🕓</span><div><b>ساعت پاسخگویی</b>شنبه تا پنج‌شنبه، ۱۰ تا ۱۹</div></div><div class="map">📍 محل نقشه (بعداً اضافه می‌شود)</div></div><div id="cf"><label for="cn">نام</label><input id="cn"><label for="cph">شماره تماس</label><input id="cph" inputmode="tel"><label for="cm">پیام</label><textarea id="cm" rows="4"></textarea><button class="btn" style="background:#F6EFE7;color:#56694E;font-weight:800;width:100%;margin-top:14px" onclick="sendMsg()">ارسال پیام</button></div></div></section></div>
+<footer>© لیوکندلس (Lio Candles) — شمع‌های دست‌ساز از موم سویا</footer>
+
+<div class="ov" id="sideOv" onclick="if(event.target===this)closeAll()"><div class="side"><div style="display:flex;justify-content:space-between;align-items:center"><b style="color:#56694E;font-size:18px">منو</b><button class="x" onclick="closeAll()" aria-label="بستن">✕</button></div><a class="sl" href="#home">خانه</a><a class="sl" href="#shop">فروشگاه</a><a class="sl" href="#custom">سفارش اختصاصی</a><a class="sl" href="#about">درباره و تماس</a><a class="sl" href="#login">ورود / ثبت‌نام</a><div class="sf"><b>لیوکندلس · Lio Candles</b><br>شنبه تا پنج‌شنبه، ۱۰ تا ۱۹<br><span dir="ltr">@liocandles</span></div></div></div>
+<div class="ov" id="searchOv" onclick="if(event.target===this)closeAll()"><div class="modal"><div style="display:flex;gap:8px"><input id="sq" aria-label="جستجو" placeholder="جستجوی شمع، رایحه یا رنگ..." oninput="doSearch()"><button class="x" onclick="closeAll()" aria-label="بستن">✕</button></div><div id="sr" style="margin-top:12px;display:flex;flex-direction:column;gap:8px"></div></div></div><div class="ov" id="cartOv" onclick="if(event.target===this)closeAll()"><div class="drawer">
+<div style="display:flex;justify-content:space-between"><h3>سبد خرید</h3><button class="x" onclick="closeAll()">✕</button></div>
+<div id="items" style="display:flex;flex-direction:column;gap:8px"></div>
+<div class="tot"><span>جمع کل:</span><span class="price" id="sum"></span></div>
+<button class="btn" onclick="openCheckout()">ادامه و پرداخت</button>
+</div></div>
+
+<div class="ov" id="coOv" onclick="if(event.target===this)closeAll()"><div class="modal" id="coBox">
+<h3>تکمیل سفارش</h3>
+<label>نام و نام خانوادگی</label><input id="nm">
+<label>شماره موبایل</label><input id="ph" inputmode="tel" placeholder="09...">
+<label>آدرس کامل</label><textarea id="ad" rows="2"></textarea>
+<label>روش پرداخت</label>
+<div class="pay"><button class="opt on" id="p1" onclick="pm(1)">درگاه بانکی</button><button class="opt" id="p2" onclick="pm(2)">پرداخت در محل</button></div>
+<div class="tot"><span>مبلغ قابل پرداخت:</span><span class="price" id="ptot"></span></div>
+<button class="btn" style="width:100%;margin-top:12px" onclick="pay()">پرداخت و ثبت سفارش</button>
+</div></div>
+
+<script src="script.js"></script>
+</body>
+</html>
